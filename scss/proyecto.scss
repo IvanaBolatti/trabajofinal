@@ -1,0 +1,332 @@
+@import "combos";
+@import "var";
+@import "pantallaCelu";
+
+.header{
+    background-image: linear-gradient(to bottom, #9b8382,rgb(211, 208, 208));
+    opacity:0.6;
+    #nav{
+        background-color: #86637e;
+        .ul {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              list-style-type: none;
+              .a {
+                  text-decoration:none; 
+                  font-family:'Marcador permanente',cursive;
+                  color: $colorOscuro;
+                  font-size: 2vw;
+                  text-align: left;
+                
+             }
+              .a:hover{
+                  color: $colorOscuro;
+                  text-decoration-line: underline; 
+            }
+        }
+    }
+}
+.body{
+    background-color:#A78B8B;
+  .main {
+      height: auto;
+      width: auto;
+      #h1 {
+        font-family:'Marcador permanente', cursiva; 
+        font-size: 6vw;
+        margin-bottom: 0.5%;
+        color: #dbbad2;
+        text-align: center; 
+        animation-name: titulos;
+        animation-duration: 3s;
+        background-image: linear-gradient(to right,#0a0a0a,#986D8E);
+      }
+   
+    .logo{
+        margin-top:1px;
+        height: 7vw;
+        width: 7vw;
+        position:absolute;
+        background-image:url("../imagenes/irlish.png");
+        background-repeat:no-repeat;
+        background-position:left;
+        background-size: contain;
+        transition: 3s; 
+    }
+    .logo:hover{
+        height: 120px;
+        width: 200px;
+    }
+    }
+} 
+.imgCerveza{
+    background-image:url("../imagenes/cervezarica.jpg");
+    margin-top:2%;
+    height: 100%;
+    max-width: 100%;
+    background-repeat:no-repeat;
+    opacity: 0.6;
+    background-size: contain;
+}
+
+/*--------------Formato de imágenes-------------*/
+@mixin imagen ($alto , $ancho)
+{
+    max-width: 100%;
+    height: $alto;
+    width: $ancho;
+} 
+
+.img{
+    @include imagen(240px, 240px);
+}
+
+.imgGaleria{
+    @include imagen(50%,350px);
+}
+
+.imgRedes{
+    @include imagen(60px,60px); 
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.colage{
+    max-width:100%;
+}
+
+ 
+ /*--------------Imágenes carrusel-------------*/
+.carrusel{
+@include imagen(540px,75%); 
+margin-left: 12.4%;
+
+}
+/*--------------Formato de letra-------------*/
+@mixin pGeneral($alineado, $tamano, $estilo, $color)
+{
+    font-style: $estilo;
+    font-weight: 300;
+    color: $color;
+    font-size: $tamano;
+    text-align: $alineado;
+} 
+
+.p { 
+    @include pGeneral(center,2.1vw,italic,rgb(33, 34, 41) );  
+    margin-top: 0px;
+    margin-bottom: 5%;   
+}
+
+.pDescrip{
+    @include pGeneral(justify,1.7vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+    margin-top: 10px;
+    margin-bottom: 5%; 
+    margin-right: 2%;  
+    text-align: center;
+}
+
+
+.pContacto{
+    @include pGeneral(left,1.7vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+    margin-left: 2%;  
+}
+
+.pNuestrasDescrip{
+    @include pGeneral(justify,1.3vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+     
+}
+/*--------------Sección de inicio--------------------*/
+section{
+  background-color:rgb(233, 218, 192);
+}
+/*--------------Quiénes somos--------------------*/
+
+.quienesFoto{
+    height: 460px;
+    max-width: 100%;
+    background-image:url("../imagenes/empresario.png");
+    background-repeat:no-repeat;
+    background-position:initial;
+    opacity:0.7;
+    background-size: contain; 
+}
+.quienesDescripción{
+    text-align: left;
+}
+/*--------------Espacio para foto y descripción--------------------*/
+@mixin espacio($direccion, $alineacion, $alto)
+{
+    display: flex;
+    flex-direction: $direccion;
+    align-items: $alineacion;
+    justify-content: space-around;
+    height: $alto;
+}
+
+.espacioCombo {
+    @include espacio(row, center, 460px)
+}
+
+.espacioQuienes {
+    @include espacio(row, center, 260px)
+}
+
+.espacioFooter {
+    @include espacio(row, center, 350px)
+}
+      
+.espacioIzquierda{
+    width: 580px;
+    height: 400px;
+}
+.espacioDerecha{
+    width: 500px;
+    height: 400px;
+}
+.grillaCirculos{
+    display: grid;
+    background-color:rgb(233, 218, 192);
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+    grid-template-areas: "izquierda centro derecha";
+    grid-gap: 3%;
+}
+.grillaIzquierda{
+    grid-area: izquierda;
+    height: 400px;
+}
+
+.grillaCentro{
+    grid-area: centro;
+    height: 400px;
+}
+
+
+.grilladerecha{
+    grid-area: derecha;
+    height: 400px;
+    
+}
+
+.aPreguntas{
+    font-style:italic;
+    font-size: 2vw;
+    color:black;
+    text-decoration-line:none;
+    
+}
+
+.aPreguntas:hover{
+    color: $colorOscuro;
+    text-decoration-line: underline; 
+}
+
+
+/*--------------Galería--------------------*/
+
+.card {
+width: 350px;
+height: 480px;
+background-color: #ceb8c3;
+text-align: center;
+}
+
+
+#pDescripcion{
+    font-style: italic;
+    font-weight: 300;
+    color: rgb(33, 34, 41);
+    font-size: 1.3vw;
+    text-align:justify;
+    margin-top: 3px;
+    margin-left:4px;
+    padding-top: 2%;
+    padding-left:6%;
+    padding-right: 6%;
+    contain: content;
+}
+#pDescripcion:hover{
+    transform:scale(1.3,1.3);  
+}
+input:focus{
+width: 100px;
+font-size: 24px;
+}
+select:focus{
+    width: 100px;
+    font-size: 24px;
+}
+/*--------------Footer-------------*/
+.footer {
+    height: 420px;
+    background-image: linear-gradient( #9b8382,rgb(211, 208, 208));
+    justify-content:right;
+
+    .redes {
+         @include pGeneral(lefts,2vw,italic,rgb(33, 34, 41) );  
+         margin-right: 5%;
+         margin-top:5%;
+
+     }
+    .aRedes{
+        text-align: left;
+        text-decoration: none;
+        text-decoration-color: #4b494a;
+    }
+
+    #navFooter{
+        background-color:#ceb8c3;
+       .ulFooter {
+          display: flex;
+          flex-direction: row;
+          justify-content:space-around;
+          align-items: center;
+          list-style-type: none;
+          .aFooter {
+              text-decoration:none; 
+              font-family:'Marcador permanente',cursive;
+              color: $colorOscuro;
+              font-size: 1.3vw;
+              text-align: left;
+              margin-bottom: 10%;
+            
+         }
+          .aFooter:hover{
+              color: $colorOscuro;
+              text-decoration-line: underline; 
+        }
+    }
+  }
+
+}
+@keyframes titulos {
+    0%{
+       background-image: linear-gradient(to right,#070707,#1f1d1e);
+       color: #b38383;
+       width: 30%;
+    }
+    35%{
+        color: #7c6060;
+        background-image: linear-gradient(to right,#1b1a1a,#4b494a);
+       width: 50%;
+    }
+    50%{
+        color:#796969;
+        background-image: linear-gradient(to right,#3b3737,#986D8E);
+        white:65%
+    }
+    75%{
+        color: #705656 ;
+        background-image: linear-gradient(to right,#3b3737,#986D8E);
+        width: 80%;
+    }   
+    100%{
+        color: #663c5c;
+        background-image: linear-gradient(to right,#3b3737,#986D8E);
+        width: 100%;
+    }
+}
+
+

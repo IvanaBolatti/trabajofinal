@@ -1,0 +1,170 @@
+
+@mixin imagen ($alto , $ancho)
+{
+    max-width: 100%;
+    height: $alto;
+    width: $ancho;
+} 
+@mixin pGeneral($alineado, $tamano, $estilo, $color)
+{
+    font-style: $estilo;
+    font-weight: 300;
+    color: $color;
+    font-size: $tamano;
+    text-align: $alineado;
+} 
+@mixin espacio($direccion, $alineacion, $alto)
+      {
+          display: flex;
+          flex-direction: $direccion;
+          align-items: $alineacion;
+          justify-content: space-around;
+          height: $alto;
+      }
+
+
+@media only screen and (max-width: 600px) 
+{
+   
+.body{
+    width: auto; 
+    .header {   
+        height: 150px;
+        width:600px;
+        
+    #nav{
+        background-color: #dbbad2;
+        .ul {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              align-items:flex-start;
+              list-style-type: none;
+              .a {
+                  text-decoration:none; 
+                  font-family:'Marcador permanente',cursive;
+                  color: $colorOscuro;
+                  font-size: 2.6vw;
+                  text-align: left;
+                
+             }
+              .a:hover{
+                  color: $colorOscuro;
+                  text-decoration-line: underline; 
+            }
+        }
+    }
+
+}
+
+    .p { 
+        @include pGeneral(center,2vw,italic,rgb(33, 34, 41) );  
+        margin-top: 0px;
+        margin-bottom: 0%;   
+    }
+    
+    .pDescrip{
+        @include pGeneral(justify,2vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+        margin-top: 0px;
+        margin-bottom: 5%; 
+        text-align: center;
+
+    }
+    
+    .pNuestrasDescrip{
+        @include pGeneral(justify,2vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+         
+    }
+    
+    .grillaCirculos{
+        display: grid;
+        background-color:rgb(233, 218, 192);
+        width: auto;
+        display:flex;
+        flex-direction:column;
+        flex-wrap: nowrap;
+        justify-content:space-around;
+        align-items:center;
+     }
+     .grillaIzquierda{
+        grid-area: izquierda;
+        height: 400px;
+    }
+    
+    .grillaCentro{
+        grid-area: centro;
+        height: 400px;
+    }
+    
+    
+    .grilladerecha{
+        grid-area: derecha;
+        height: 400px;
+      } 
+       
+
+.carrusel{
+    @include imagen(300px,88%); 
+    margin-left: 6.4%;
+    
+    } 
+   
+.footer{
+       height: 480px;
+       width: auto;
+      
+     .espacioFooter {
+        @include espacio(column, center, 450px);
+     }
+     .espacioIzquierda{
+        width: auto;
+        height: 400px;
+    }
+    .espacioDerecha{
+        width: auto;
+        height: 400px;
+    }
+    #navFooter{
+        background-color:#dbbad2;
+       .ulFooter {
+          display: flex;
+          flex-direction: column;
+          justify-content:space-around;
+          align-items:initial;
+          list-style-type: none;
+          .aFooter {
+              text-decoration:none; 
+              font-family:'Marcador permanente',cursive;
+              color: $colorOscuro;
+              font-size: 1.3vw;
+              text-align: left;
+              margin-bottom: 10%;
+            
+         }
+          .aFooter:hover{
+              color: $colorOscuro;
+              text-decoration-line: underline; 
+        }
+    }
+  }
+} 
+}
+.main{
+    .espacioCombo {
+        @include espacio(column, center, 450px)
+    }
+    .espacioIzquierda{
+        width: auto;
+        height: 120px;
+    }
+    .espacioDerecha{
+        width: 80%;
+        height: 290px;
+        align-items: center;
+    }
+    
+    .espacioQuienes {
+        @include espacio(column, center, 400px)
+    }
+}
+}

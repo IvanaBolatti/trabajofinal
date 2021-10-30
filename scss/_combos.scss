@@ -1,0 +1,63 @@
+
+#combos{
+    height:450px;
+    width: auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content:space-around;
+    align-items:center;
+    padding:1em;
+    background-color:#979b98;
+#combos_iguales{
+   height:auto;
+   width: 50%;
+   padding-top:3%;
+   text-align: center;
+}
+    #combo1{
+       @extend #combos_iguales;
+    }
+    #combo2{
+      @extend #combos_iguales;
+    }
+    #combo3{
+      @extend #combos_iguales;
+}
+    #pDescripcion{
+       font-style: italic;
+       font-weight: 300;
+       color: rgb(33, 34, 41);
+       font-size: 1.3vw;
+       text-align:justify;
+       margin-top: 3px;
+       margin-left:4px;
+       padding-top: 2%;
+       padding-left:6%;
+       padding-right: 6%;
+       contain: content;
+    }
+} 
+@media only screen and (max-width: 600px) 
+{
+      #combos{
+         height:1000px;
+         width: auto;
+         display:flex;
+         flex-direction:column;
+         flex-wrap: nowrap;
+         justify-content:space-around;
+         align-items:center;
+         padding:1em;
+         background-color:#979b98;
+     #combos_iguales{
+        height:auto;
+        width: 50%;
+        padding-top:3%;
+        text-align: center;
+    }
+    } 
+   
+} 
+   
+  
