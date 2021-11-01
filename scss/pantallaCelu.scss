@@ -30,7 +30,7 @@
     width: auto; 
     .header {   
         height: 150px;
-        width:600px;
+        width:100%;
         
     #nav{
         background-color: #dbbad2;
@@ -110,7 +110,6 @@
     } 
    
 .footer{
-       height: 480px;
        width: auto;
       
      .espacioFooter {
@@ -149,22 +148,5 @@
   }
 } 
 }
-.main{
-    .espacioCombo {
-        @include espacio(column, center, 450px)
-    }
-    .espacioIzquierda{
-        width: auto;
-        height: 120px;
-    }
-    .espacioDerecha{
-        width: 80%;
-        height: 290px;
-        align-items: center;
-    }
-    
-    .espacioQuienes {
-        @include espacio(column, center, 400px)
-    }
-}
+
 }

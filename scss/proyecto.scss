@@ -84,7 +84,8 @@
 }
 
 .imgGaleria{
-    @include imagen(50%,350px);
+    @include imagen(215px,350px);
+    object-fit: cover;
 }
 
 .imgRedes{
@@ -101,6 +102,7 @@
 .carrusel{
 @include imagen(540px,75%); 
 margin-left: 12.4%;
+object-fit:cover;
 
 }
 /*--------------Formato de letra-------------*/
@@ -124,17 +126,23 @@ margin-left: 12.4%;
     margin-top: 10px;
     margin-bottom: 5%; 
     margin-right: 2%;  
-    text-align: center;
+    text-align: justify;  
 }
 
-
+.pCirculos{
+    @include pGeneral(center,1.7vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+    margin-top: 10%;
+    margin-bottom: 5%; 
+    margin-right: 2%;  
+    text-align: justify;  
+}
 .pContacto{
     @include pGeneral(left,1.7vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
     margin-left: 2%;  
 }
 
 .pNuestrasDescrip{
-    @include pGeneral(justify,1.3vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
+    @include pGeneral(justify,1.2vw,font-family 'Marcador permanente',rgb(33, 34, 41) );  
      
 }
 /*--------------Sección de inicio--------------------*/
@@ -156,30 +164,29 @@ section{
     text-align: left;
 }
 /*--------------Espacio para foto y descripción--------------------*/
-@mixin espacio($direccion, $alineacion, $alto)
+@mixin espacio($direccion, $alineacion)
 {
     display: flex;
     flex-direction: $direccion;
     align-items: $alineacion;
     justify-content: space-around;
-    height: $alto;
+
 }
 
 .espacioCombo {
-    @include espacio(row, center, 460px)
+    @include espacio(row, center)
 }
 
 .espacioQuienes {
-    @include espacio(row, center, 260px)
+    @include espacio(row, center)
 }
 
 .espacioFooter {
-    @include espacio(row, center, 350px)
+    @include espacio(row, center)
 }
       
 .espacioIzquierda{
     width: 580px;
-    height: 400px;
 }
 .espacioDerecha{
     width: 500px;
@@ -188,10 +195,12 @@ section{
 .grillaCirculos{
     display: grid;
     background-color:rgb(233, 218, 192);
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 31% 31% 31%;
     text-align: center;
+    justify-content: center;
     grid-template-areas: "izquierda centro derecha";
     grid-gap: 3%;
+    margin-top: 5%;
 }
 .grillaIzquierda{
     grid-area: izquierda;
@@ -231,8 +240,14 @@ width: 350px;
 height: 480px;
 background-color: #ceb8c3;
 text-align: center;
+align-items: center;
 }
 
+.card-body {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
 
 #pDescripcion{
     font-style: italic;
@@ -260,7 +275,6 @@ select:focus{
 }
 /*--------------Footer-------------*/
 .footer {
-    height: 420px;
     background-image: linear-gradient( #9b8382,rgb(211, 208, 208));
     justify-content:right;
 
